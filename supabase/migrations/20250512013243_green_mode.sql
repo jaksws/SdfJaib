@@ -173,9 +173,9 @@ BEGIN
   INSERT INTO public.profiles (id, name, email, phone_number)
   VALUES (
     new.id,
-    COALESCE(new.raw_user_meta_data->>'name', 'User'),
+    COALESCE(new.raw_user_meta_data->>'name', new.email), -- Use email as a fallback for name
     new.email,
-    new.phone
+    new.phone -- new.phone can be null, profiles.phone_number allows null
   );
   RETURN new;
 END;
