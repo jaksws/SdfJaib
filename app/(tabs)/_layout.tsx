@@ -2,6 +2,7 @@ import { Tabs } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import { Chrome as Home, SendHorizontal, CreditCard, ClipboardList, User } from 'lucide-react-native';
 import { primary, neutral } from '@/utils/colors';
+import colors from '@/utils/colors';
 
 export default function TabLayout() {
   return (
