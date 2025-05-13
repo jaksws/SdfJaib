@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { Plus } from 'lucide-react-native';
-import colors from '@/utils/colors';
+import { primary, secondary, neutral, white } from '@/utils/colors';
 import { Beneficiary } from '@/types';
 import { getInitials } from '@/utils/formatters';
 
@@ -28,7 +28,7 @@ export default function FrequentContacts({
       >
         <TouchableOpacity style={styles.addContainer} onPress={onAddPress}>
           <View style={styles.addButton}>
-            <Plus size={24} color={colors.primary[500]} />
+            <Plus size={24} color={primary[500]} />
           </View>
           <Text style={styles.contactName}>New</Text>
         </TouchableOpacity>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
     marginBottom: 16,
   },
   scrollContainer: {
@@ -80,12 +80,12 @@ const styles = StyleSheet.create({
     height: 56,
     borderRadius: 28,
     borderWidth: 1,
-    borderColor: colors.primary[500],
+    borderColor: primary[500],
     borderStyle: 'dashed',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
-    backgroundColor: colors.primary[50],
+    backgroundColor: primary[50],
   },
   contactContainer: {
     alignItems: 'center',
@@ -102,19 +102,19 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    backgroundColor: colors.secondary[500],
+    backgroundColor: secondary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
   },
   initialsText: {
-    color: colors.white,
+    color: white,
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
   },
   contactName: {
     fontSize: 12,
-    color: colors.neutral[800],
+    color: neutral[800],
     textAlign: 'center',
     fontFamily: 'Roboto-Medium',
   },

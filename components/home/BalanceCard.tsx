@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Eye, EyeOff, Plus, ArrowRight } from 'lucide-react-native';
 import Card from '../common/Card';
-import colors from '@/utils/colors';
+import { primary, neutral } from '@/utils/colors';
 import { formatCurrency } from '@/utils/formatters';
 
 interface BalanceCardProps {
@@ -21,9 +21,9 @@ export default function BalanceCard({ balance }: BalanceCardProps) {
           onPress={() => setShowBalance(!showBalance)}
         >
           {showBalance ? (
-            <Eye size={20} color={colors.neutral[600]} />
+            <Eye size={20} color={neutral[600]} />
           ) : (
-            <EyeOff size={20} color={colors.neutral[600]} />
+            <EyeOff size={20} color={neutral[600]} />
           )}
         </TouchableOpacity>
       </View>
@@ -35,13 +35,13 @@ export default function BalanceCard({ balance }: BalanceCardProps) {
       <View style={styles.actions}>
         <TouchableOpacity style={styles.actionButton}>
           <View style={styles.actionIconContainer}>
-            <Plus size={20} color={colors.white} />
+            <Plus size={20} color={primary[500]} />
           </View>
           <Text style={styles.actionText}>Add Money</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionButton}>
           <View style={styles.actionIconContainer}>
-            <ArrowRight size={20} color={colors.white} />
+            <ArrowRight size={20} color={primary[500]} />
           </View>
           <Text style={styles.actionText}>Send Money</Text>
         </TouchableOpacity>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Medium',
   },
   eyeButton: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   balanceAmount: {
     fontSize: 28,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
   },
   actions: {
     flexDirection: 'row',
@@ -90,14 +90,14 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
   },
   actionText: {
     fontSize: 14,
-    color: colors.neutral[800],
+    color: neutral[800],
     fontFamily: 'Roboto-Medium',
   },
 });

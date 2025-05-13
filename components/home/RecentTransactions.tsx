@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { ArrowRight } from 'lucide-react-native';
-import colors from '@/utils/colors';
+import { primary, neutral } from '@/utils/colors';
 import { Transaction } from '@/types';
 import TransactionItem from '../transactions/TransactionItem';
 import { useRouter } from 'expo-router';
@@ -24,7 +24,7 @@ export default function RecentTransactions({ transactions }: RecentTransactionsP
           onPress={() => router.push('/history')}
         >
           <Text style={styles.viewAllText}>View All</Text>
-          <ArrowRight size={16} color={colors.primary[500]} />
+          <ArrowRight size={16} color={primary[500]} />
         </TouchableOpacity>
       </View>
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
   },
   viewAllButton: {
     flexDirection: 'row',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   viewAllText: {
     fontSize: 14,
-    color: colors.primary[500],
+    color: primary[500],
     marginRight: 4,
     fontFamily: 'Roboto-Medium',
   },
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
   },
 });

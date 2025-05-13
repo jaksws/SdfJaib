@@ -9,7 +9,7 @@ import {
   ViewStyle,
   TextStyle
 } from 'react-native';
-import colors from '@/utils/colors';
+import { primary, secondary, neutral, white } from '@/utils/colors';
 
 interface ButtonProps {
   title: string;
@@ -64,7 +64,7 @@ export default function Button({
     >
       {loading ? (
         <ActivityIndicator 
-          color={variant === 'outline' || variant === 'text' ? colors.primary[500] : colors.white} 
+          color={variant === 'outline' || variant === 'text' ? primary[500] : white} 
           size="small" 
         />
       ) : (
@@ -94,15 +94,15 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   primaryButton: {
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
   },
   secondaryButton: {
-    backgroundColor: colors.secondary[500],
+    backgroundColor: secondary[500],
   },
   outlineButton: {
     backgroundColor: 'transparent',
     borderWidth: 1,
-    borderColor: colors.primary[500],
+    borderColor: primary[500],
   },
   textButton: {
     backgroundColor: 'transparent',
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
   },
   disabledButton: {
-    backgroundColor: colors.neutral[300],
-    borderColor: colors.neutral[300],
+    backgroundColor: neutral[300],
+    borderColor: neutral[300],
     opacity: 0.7,
   },
   text: {
@@ -130,16 +130,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   primaryText: {
-    color: colors.white,
+    color: white,
   },
   secondaryText: {
-    color: colors.white,
+    color: white,
   },
   outlineText: {
-    color: colors.primary[500],
+    color: primary[500],
   },
   textText: {
-    color: colors.primary[500],
+    color: primary[500],
   },
   smallText: {
     fontSize: 12,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   disabledText: {
-    color: colors.neutral[600],
+    color: neutral[600],
   },
   leftIconContainer: {
     marginRight: 8,

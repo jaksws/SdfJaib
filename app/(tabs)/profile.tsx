@@ -11,7 +11,7 @@ import {
 import { User, CreditCard, Settings, Shield, CircleHelp as HelpCircle, LogOut, ChevronRight } from 'lucide-react-native';
 import Header from '@/components/common/Header';
 import Card from '@/components/common/Card';
-import colors from '@/utils/colors';
+import { primary } from '@/utils/colors';
 import { currentUser, notifications } from '@/utils/mockData';
 import { useRouter } from 'expo-router';
 
@@ -22,31 +22,31 @@ export default function ProfileScreen() {
     {
       id: 'personal',
       title: 'Personal Information',
-      icon: <User size={20} color={colors.primary[500]} />,
+      icon: <User size={20} color={primary[500]} />,
       onPress: () => alert('Personal Information'),
     },
     {
       id: 'accounts',
       title: 'Linked Accounts',
-      icon: <CreditCard size={20} color={colors.primary[500]} />,
+      icon: <CreditCard size={20} color={primary[500]} />,
       onPress: () => alert('Linked Accounts'),
     },
     {
       id: 'security',
       title: 'Security',
-      icon: <Shield size={20} color={colors.primary[500]} />,
+      icon: <Shield size={20} color={primary[500]} />,
       onPress: () => alert('Security'),
     },
     {
       id: 'settings',
       title: 'App Settings',
-      icon: <Settings size={20} color={colors.primary[500]} />,
+      icon: <Settings size={20} color={primary[500]} />,
       onPress: () => alert('App Settings'),
     },
     {
       id: 'help',
       title: 'Help & Support',
-      icon: <HelpCircle size={20} color={colors.primary[500]} />,
+      icon: <HelpCircle size={20} color={primary[500]} />,
       onPress: () => alert('Help & Support'),
     },
   ];

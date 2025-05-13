@@ -10,7 +10,7 @@ import {
   StatusBar 
 } from 'react-native';
 import { Bell } from 'lucide-react-native';
-import colors from '@/utils/colors';
+import { primary, neutral, error } from '@/utils/colors';
 import BalanceCard from '@/components/home/BalanceCard';
 import QuickActions from '@/components/home/QuickActions';
 import FrequentContacts from '@/components/home/FrequentContacts';
@@ -35,7 +35,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
+      <StatusBar barStyle="dark-content" backgroundColor={neutral[50]} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
@@ -60,7 +60,7 @@ export default function HomeScreen() {
             </View>
           </View>
           <TouchableOpacity style={styles.notificationButton}>
-            <Bell size={22} color={colors.neutral[800]} />
+            <Bell size={22} color={neutral[800]} />
             <View style={styles.notificationBadge} />
           </TouchableOpacity>
         </View>
@@ -84,7 +84,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral[50],
+    backgroundColor: neutral[50],
   },
   header: {
     flexDirection: 'row',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: colors.white,
+    backgroundColor: neutral[50],
   },
   profileSection: {
     flexDirection: 'row',
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: colors.primary[100],
+    backgroundColor: primary[100],
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -116,26 +116,26 @@ const styles = StyleSheet.create({
   profileInitials: {
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
-    color: colors.primary[800],
+    color: primary[800],
   },
   welcomeContainer: {
     justifyContent: 'center',
   },
   welcomeText: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
   },
   nameText: {
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Medium',
   },
   notificationButton: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: colors.neutral[100],
+    backgroundColor: neutral[100],
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
@@ -147,6 +147,6 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: colors.error[500],
+    backgroundColor: error[500],
   },
 });

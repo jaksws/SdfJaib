@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
-import colors from '@/utils/colors';
+import { neutral, white } from '@/utils/colors';
 
 interface CardProps {
   children: React.ReactNode;
@@ -30,29 +30,29 @@ export default function Card({
 const styles = StyleSheet.create({
   card: {
     borderRadius: 12,
-    backgroundColor: colors.white,
+    backgroundColor: white,
     overflow: 'hidden',
   },
   defaultCard: {
-    backgroundColor: colors.white,
-    shadowColor: colors.neutral[900],
+    backgroundColor: white,
+    shadowColor: neutral[900],
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
   },
   elevatedCard: {
-    backgroundColor: colors.white,
-    shadowColor: colors.neutral[900],
+    backgroundColor: white,
+    shadowColor: neutral[900],
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.15,
     shadowRadius: 8,
     elevation: 6,
   },
   outlinedCard: {
-    backgroundColor: colors.white,
+    backgroundColor: white,
     borderWidth: 1,
-    borderColor: colors.neutral[200],
+    borderColor: neutral[200],
   },
   nonePadding: {
     padding: 0,

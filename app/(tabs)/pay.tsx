@@ -11,7 +11,7 @@ import {
 import { Zap, Wifi, Droplet, Phone, Tv, ShoppingBag, ChevronRight } from 'lucide-react-native';
 import Header from '@/components/common/Header';
 import Card from '@/components/common/Card';
-import colors from '@/utils/colors';
+import { primary, secondary, success, warning, error, neutral } from '@/utils/colors';
 import { bills } from '@/utils/mockData';
 import { formatCurrency, getBillIconName } from '@/utils/formatters';
 
@@ -20,12 +20,12 @@ export default function PayScreen() {
 
   const categories = [
     { id: 'all', label: 'All', icon: null },
-    { id: 'electricity', label: 'Electricity', icon: <Zap size={20} color={colors.white} /> },
-    { id: 'internet', label: 'Internet', icon: <Wifi size={20} color={colors.white} /> },
-    { id: 'water', label: 'Water', icon: <Droplet size={20} color={colors.white} /> },
-    { id: 'mobile', label: 'Mobile', icon: <Phone size={20} color={colors.white} /> },
-    { id: 'tv', label: 'TV', icon: <Tv size={20} color={colors.white} /> },
-    { id: 'shopping', label: 'Shopping', icon: <ShoppingBag size={20} color={colors.white} /> },
+    { id: 'electricity', label: 'Electricity', icon: <Zap size={20} color={neutral.white} /> },
+    { id: 'internet', label: 'Internet', icon: <Wifi size={20} color={neutral.white} /> },
+    { id: 'water', label: 'Water', icon: <Droplet size={20} color={neutral.white} /> },
+    { id: 'mobile', label: 'Mobile', icon: <Phone size={20} color={neutral.white} /> },
+    { id: 'tv', label: 'TV', icon: <Tv size={20} color={neutral.white} /> },
+    { id: 'shopping', label: 'Shopping', icon: <ShoppingBag size={20} color={neutral.white} /> },
   ];
 
   // Filter bills based on selected category
@@ -38,17 +38,17 @@ export default function PayScreen() {
     const iconName = getBillIconName(type);
     switch (iconName) {
       case 'zap':
-        return <Zap size={20} color={colors.white} />;
+        return <Zap size={20} color={neutral.white} />;
       case 'wifi':
-        return <Wifi size={20} color={colors.white} />;
+        return <Wifi size={20} color={neutral.white} />;
       case 'droplet':
-        return <Droplet size={20} color={colors.white} />;
+        return <Droplet size={20} color={neutral.white} />;
       case 'phone':
-        return <Phone size={20} color={colors.white} />;
+        return <Phone size={20} color={neutral.white} />;
       case 'tv':
-        return <Tv size={20} color={colors.white} />;
+        return <Tv size={20} color={neutral.white} />;
       default:
-        return <ShoppingBag size={20} color={colors.white} />;
+        return <ShoppingBag size={20} color={neutral.white} />;
     }
   };
 
@@ -56,17 +56,17 @@ export default function PayScreen() {
   const getBillIconBackground = (type: string) => {
     switch (type) {
       case 'electricity':
-        return colors.warning[500];
+        return warning[500];
       case 'internet':
-        return colors.primary[500];
+        return primary[500];
       case 'water':
-        return colors.secondary[500];
+        return secondary[500];
       case 'mobile':
-        return colors.success[500];
+        return success[500];
       case 'tv':
-        return colors.error[500];
+        return error[500];
       default:
-        return colors.neutral[500];
+        return neutral[500];
     }
   };
 
@@ -149,7 +149,7 @@ export default function PayScreen() {
                 <View style={styles.billAmountContainer}>
                   <Text style={styles.billAmount}>{formatCurrency(bill.amount)}</Text>
                   <Text style={styles.billDueDate}>Due: {new Date(bill.dueDate).toLocaleDateString()}</Text>
-                  <ChevronRight size={16} color={colors.neutral[400]} />
+                  <ChevronRight size={16} color={neutral[400]} />
                 </View>
               </TouchableOpacity>
             ))
@@ -161,12 +161,12 @@ export default function PayScreen() {
           
           <View style={styles.servicesGrid}>
             {[
-              { id: 'mobile', label: 'Mobile', icon: <Phone size={24} color={colors.white} />, color: colors.primary[500] },
-              { id: 'electricity', label: 'Electricity', icon: <Zap size={24} color={colors.white} />, color: colors.warning[500] },
-              { id: 'internet', label: 'Internet', icon: <Wifi size={24} color={colors.white} />, color: colors.secondary[500] },
-              { id: 'water', label: 'Water', icon: <Droplet size={24} color={colors.white} />, color: colors.success[500] },
-              { id: 'tv', label: 'TV', icon: <Tv size={24} color={colors.white} />, color: colors.error[500] },
-              { id: 'shopping', label: 'Shopping', icon: <ShoppingBag size={24} color={colors.white} />, color: colors.neutral[700] },
+              { id: 'mobile', label: 'Mobile', icon: <Phone size={24} color={neutral.white} />, color: primary[500] },
+              { id: 'electricity', label: 'Electricity', icon: <Zap size={24} color={neutral.white} />, color: warning[500] },
+              { id: 'internet', label: 'Internet', icon: <Wifi size={24} color={neutral.white} />, color: secondary[500] },
+              { id: 'water', label: 'Water', icon: <Droplet size={24} color={neutral.white} />, color: success[500] },
+              { id: 'tv', label: 'TV', icon: <Tv size={24} color={neutral.white} />, color: error[500] },
+              { id: 'shopping', label: 'Shopping', icon: <ShoppingBag size={24} color={neutral.white} />, color: neutral[700] },
             ].map(service => (
               <TouchableOpacity 
                 key={service.id}
@@ -193,7 +193,7 @@ export default function PayScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral[50],
+    backgroundColor: neutral[50],
   },
   scanCard: {
     marginHorizontal: 16,
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
   },
   scanText: {
     fontSize: 16,
-    color: colors.primary[500],
+    color: primary[500],
     fontFamily: 'Roboto-Medium',
   },
   categoryScrollContainer: {
@@ -226,30 +226,30 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: colors.neutral[300],
+    borderColor: neutral[300],
     marginRight: 8,
-    backgroundColor: colors.white,
+    backgroundColor: neutral.white,
   },
   selectedCategoryItem: {
-    backgroundColor: colors.primary[500],
-    borderColor: colors.primary[500],
+    backgroundColor: primary[500],
+    borderColor: primary[500],
   },
   categoryIconContainer: {
     width: 28,
     height: 28,
     borderRadius: 14,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 8,
   },
   categoryText: {
     fontSize: 14,
-    color: colors.neutral[800],
+    color: neutral[800],
     fontFamily: 'Roboto-Medium',
   },
   selectedCategoryText: {
-    color: colors.white,
+    color: neutral.white,
   },
   billsContainer: {
     paddingHorizontal: 16,
@@ -258,12 +258,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
     marginBottom: 16,
   },
   emptyText: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
     textAlign: 'center',
     marginVertical: 24,
@@ -271,11 +271,11 @@ const styles = StyleSheet.create({
   billItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: colors.white,
+    backgroundColor: neutral.white,
     borderRadius: 8,
     padding: 16,
     marginBottom: 12,
-    shadowColor: colors.neutral[900],
+    shadowColor: neutral[900],
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -295,36 +295,36 @@ const styles = StyleSheet.create({
   },
   billProvider: {
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Medium',
     marginBottom: 2,
   },
   billAccountNumber: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
     marginBottom: 2,
   },
   billStatus: {
     fontSize: 12,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Medium',
   },
   overdueStatus: {
-    color: colors.error[500],
+    color: error[500],
   },
   billAmountContainer: {
     alignItems: 'flex-end',
   },
   billAmount: {
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Bold',
     marginBottom: 2,
   },
   billDueDate: {
     fontSize: 12,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
     marginBottom: 4,
   },
@@ -347,14 +347,14 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 8,
   },
   serviceLabel: {
     fontSize: 14,
-    color: colors.neutral[800],
+    color: neutral[800],
     fontFamily: 'Roboto-Medium',
     textAlign: 'center',
   },

@@ -7,7 +7,7 @@ import {
   Upload,
   ArrowRight
 } from 'lucide-react-native';
-import colors from '@/utils/colors';
+import { primary, secondary, success, warning, error, neutral, white } from '@/utils/colors';
 import { Transaction } from '@/types';
 import { formatCurrency, formatDate } from '@/utils/formatters';
 
@@ -22,7 +22,7 @@ export default function TransactionItem({
 }: TransactionItemProps) {
   // Determine the icon based on transaction type
   const renderIcon = () => {
-    const iconColor = colors.white;
+    const iconColor = white;
     const iconSize = 16;
 
     switch (transaction.type) {
@@ -43,15 +43,15 @@ export default function TransactionItem({
   const getIconBackgroundColor = () => {
     switch (transaction.type) {
       case 'transfer':
-        return colors.primary[500];
+        return primary[500];
       case 'payment':
-        return colors.secondary[500];
+        return secondary[500];
       case 'deposit':
-        return colors.success[500];
+        return success[500];
       case 'withdrawal':
-        return colors.warning[500];
+        return warning[500];
       default:
-        return colors.primary[500];
+        return primary[500];
     }
   };
 
@@ -106,7 +106,7 @@ export default function TransactionItem({
         <Text style={styles.date}>{formatDate(transaction.date)}</Text>
       </View>
       
-      <ArrowRight size={16} color={colors.neutral[400]} />
+      <ArrowRight size={16} color={neutral[400]} />
     </TouchableOpacity>
   );
 }
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 16,
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral[200],
+    borderBottomColor: neutral[200],
   },
   iconContainer: {
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -134,13 +134,13 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Medium',
     marginBottom: 2,
   },
   details: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
   },
   amountContainer: {
@@ -153,14 +153,14 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   outgoingAmount: {
-    color: colors.error[500],
+    color: error[500],
   },
   incomingAmount: {
-    color: colors.success[500],
+    color: success[500],
   },
   date: {
     fontSize: 12,
-    color: colors.neutral[500],
+    color: neutral[500],
     fontFamily: 'Roboto-Regular',
   },
 });

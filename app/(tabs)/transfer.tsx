@@ -15,13 +15,11 @@ import { Search, X, ChevronRight } from 'lucide-react-native';
 import Header from '@/components/common/Header';
 import Card from '@/components/common/Card';
 import Button from '@/components/common/Button';
-import colors from '@/utils/colors';
+import { primary, secondary, neutral } from '@/utils/colors';
 import { beneficiaries, currentUser } from '@/utils/mockData';
 import { formatCurrency, getInitials } from '@/utils/formatters';
-import { useRouter } from 'expo-router';
 
 export default function TransferScreen() {
-  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTab, setSelectedTab] = useState('jaib');
 
@@ -69,17 +67,17 @@ export default function TransferScreen() {
 
           <View style={styles.searchContainer}>
             <View style={styles.searchInputContainer}>
-              <Search size={20} color={colors.neutral[500]} />
+              <Search size={20} color={neutral[500]} />
               <TextInput
                 style={styles.searchInput}
                 placeholder="Search for a recipient"
                 value={searchQuery}
                 onChangeText={setSearchQuery}
-                placeholderTextColor={colors.neutral[500]}
+                placeholderTextColor={neutral[500]}
               />
               {searchQuery.length > 0 && (
                 <TouchableOpacity onPress={() => setSearchQuery('')}>
-                  <X size={20} color={colors.neutral[500]} />
+                  <X size={20} color={neutral[500]} />
                 </TouchableOpacity>
               )}
             </View>
@@ -113,7 +111,7 @@ export default function TransferScreen() {
                       {beneficiary.phoneNumber || beneficiary.accountNumber || 'Jaib User'}
                     </Text>
                   </View>
-                  <ChevronRight size={20} color={colors.neutral[400]} />
+                  <ChevronRight size={20} color={neutral[400]} />
                 </TouchableOpacity>
               ))
             )}
@@ -140,7 +138,7 @@ export default function TransferScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.neutral[50],
+    backgroundColor: neutral[50],
   },
   keyboardAvoidingView: {
     flex: 1,
@@ -148,25 +146,25 @@ const styles = StyleSheet.create({
   balanceCard: {
     marginHorizontal: 16,
     marginTop: 16,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
   },
   balanceLabel: {
     fontSize: 14,
-    color: colors.white,
+    color: neutral.white,
     opacity: 0.8,
     fontFamily: 'Roboto-Regular',
     marginBottom: 4,
   },
   balanceValue: {
     fontSize: 24,
-    color: colors.white,
+    color: neutral.white,
     fontFamily: 'Roboto-Bold',
   },
   tabContainer: {
     flexDirection: 'row',
     marginHorizontal: 16,
     marginTop: 16,
-    backgroundColor: colors.neutral[200],
+    backgroundColor: neutral[200],
     borderRadius: 8,
     padding: 4,
   },
@@ -177,15 +175,15 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   activeTab: {
-    backgroundColor: colors.white,
+    backgroundColor: neutral.white,
   },
   tabText: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Medium',
   },
   activeTabText: {
-    color: colors.primary[500],
+    color: primary[500],
   },
   searchContainer: {
     marginHorizontal: 16,
@@ -194,18 +192,18 @@ const styles = StyleSheet.create({
   searchInputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: colors.white,
+    backgroundColor: neutral.white,
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderWidth: 1,
-    borderColor: colors.neutral[300],
+    borderColor: neutral[300],
   },
   searchInput: {
     flex: 1,
     marginLeft: 8,
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Regular',
   },
   recipientsContainer: {
@@ -215,12 +213,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
     marginBottom: 16,
   },
   emptyText: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
     textAlign: 'center',
     marginVertical: 24,
@@ -230,7 +228,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral[200],
+    borderBottomColor: neutral[200],
   },
   recipientImage: {
     width: 48,
@@ -242,13 +240,13 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: colors.secondary[500],
+    backgroundColor: secondary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
   },
   initialsText: {
-    color: colors.white,
+    color: neutral.white,
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
   },
@@ -257,13 +255,13 @@ const styles = StyleSheet.create({
   },
   recipientName: {
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Medium',
     marginBottom: 2,
   },
   recipientDetails: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
   },
   buttonContainer: {

@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Chrome as Home, SendHorizontal, CreditCard, ClipboardList, User } from 'lucide-react-native';
-import colors from '@/utils/colors';
+import { primary, neutral } from '@/utils/colors';
 
 export default function TabLayout() {
   return (
@@ -9,8 +9,8 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.tabBar,
-        tabBarActiveTintColor: colors.primary[500],
-        tabBarInactiveTintColor: colors.neutral[600],
+        tabBarActiveTintColor: primary[500],
+        tabBarInactiveTintColor: neutral[600],
         tabBarLabelStyle: styles.tabBarLabel,
         tabBarIconStyle: styles.tabBarIcon,
       }}>
@@ -70,9 +70,9 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingTop: 8,
     borderTopWidth: 1,
-    borderTopColor: colors.neutral[200],
+    borderTopColor: neutral[200],
     elevation: 8,
-    shadowColor: colors.neutral[900],
+    shadowColor: neutral[900],
     shadowOffset: { width: 0, height: -2 },
     shadowOpacity: 0.05,
     shadowRadius: 3,

@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Bell, ChevronLeft } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
-import colors from '@/utils/colors';
+import { neutral } from '@/utils/colors';
 
 interface HeaderProps {
   title: string;
@@ -26,7 +26,7 @@ export default function Header({
       <View style={styles.leftContainer}>
         {showBack && (
           <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-            <ChevronLeft color={colors.neutral[800]} size={24} />
+            <ChevronLeft color={neutral[800]} size={24} />
           </TouchableOpacity>
         )}
         <Text style={styles.title}>{title}</Text>
@@ -38,7 +38,7 @@ export default function Header({
             style={styles.notificationButton} 
             onPress={onNotificationPress}
           >
-            <Bell color={colors.neutral[800]} size={22} />
+            <Bell color={neutral[800]} size={22} />
             <View style={styles.notificationBadge} />
           </TouchableOpacity>
         )}
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 16,
-    backgroundColor: colors.white,
+    backgroundColor: neutral.white,
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral[200],
+    borderBottomColor: neutral[200],
   },
   leftContainer: {
     flexDirection: 'row',
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
   },
   notificationButton: {
     padding: 8,
@@ -85,6 +85,6 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: colors.error[500],
+    backgroundColor: error[500],
   },
 });

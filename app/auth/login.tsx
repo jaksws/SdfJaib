@@ -6,14 +6,13 @@ import {
   SafeAreaView, 
   TextInput, 
   TouchableOpacity, 
-  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView
 } from 'react-native';
 import { Eye, EyeOff } from 'lucide-react-native';
 import Button from '@/components/common/Button';
-import colors from '@/utils/colors';
+import { neutral, primary } from '@/utils/colors';
 import { useRouter } from 'expo-router';
 
 export default function LoginScreen() {
@@ -78,9 +77,9 @@ export default function LoginScreen() {
                   onPress={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeOff size={20} color={colors.neutral[600]} />
+                    <EyeOff size={20} color={neutral[600]} />
                   ) : (
-                    <Eye size={20} color={colors.neutral[600]} />
+                    <Eye size={20} color={neutral[600]} />
                   )}
                 </TouchableOpacity>
               </View>
@@ -100,7 +99,7 @@ export default function LoginScreen() {
             />
 
             <View style={styles.registerContainer}>
-              <Text style={styles.registerText}>Don't have an account? </Text>
+              <Text style={styles.registerText}>Don&apos;t have an account? </Text>
               <TouchableOpacity onPress={() => router.push('/auth/register')}>
                 <Text style={styles.registerLink}>Register</Text>
               </TouchableOpacity>
@@ -115,7 +114,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: neutral.white,
   },
   keyboardAvoidView: {
     flex: 1,
@@ -139,7 +138,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -147,16 +146,16 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 28,
     fontFamily: 'Roboto-Bold',
-    color: colors.white,
+    color: neutral.white,
   },
   appName: {
     fontSize: 32,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
   },
   tagline: {
     fontSize: 16,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
   },
   formContainer: {
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontFamily: 'Roboto-Bold',
-    color: colors.neutral[900],
+    color: neutral[900],
     marginBottom: 24,
   },
   inputContainer: {
@@ -173,23 +172,23 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     fontSize: 14,
-    color: colors.neutral[700],
+    color: neutral[700],
     fontFamily: 'Roboto-Medium',
     marginBottom: 8,
   },
   input: {
-    backgroundColor: colors.neutral[100],
+    backgroundColor: neutral[100],
     borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 12,
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Regular',
   },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: colors.neutral[100],
+    backgroundColor: neutral[100],
     borderRadius: 8,
     paddingHorizontal: 16,
   },
@@ -197,7 +196,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 12,
     fontSize: 16,
-    color: colors.neutral[900],
+    color: neutral[900],
     fontFamily: 'Roboto-Regular',
   },
   eyeButton: {
@@ -209,7 +208,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     fontSize: 14,
-    color: colors.primary[500],
+    color: primary[500],
     fontFamily: 'Roboto-Medium',
   },
   loginButton: {
@@ -221,12 +220,12 @@ const styles = StyleSheet.create({
   },
   registerText: {
     fontSize: 14,
-    color: colors.neutral[700],
+    color: neutral[700],
     fontFamily: 'Roboto-Regular',
   },
   registerLink: {
     fontSize: 14,
-    color: colors.primary[500],
+    color: primary[500],
     fontFamily: 'Roboto-Bold',
   },
 });

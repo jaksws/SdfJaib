@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { Calendar, ArrowDown, ArrowUp, Filter } from 'lucide-react-native';
 import Header from '@/components/common/Header';
-import colors from '@/utils/colors';
+import { primary, neutral } from '@/utils/colors';
 import { transactions } from '@/utils/mockData';
 import TransactionItem from '@/components/transactions/TransactionItem';
 import { Transaction } from '@/types';
@@ -41,21 +41,21 @@ export default function HistoryScreen() {
         style={[styles.filterButton, filter === 'transfer' && styles.activeFilterButton]}
         onPress={() => setFilter('transfer')}
       >
-        <ArrowUp size={16} color={filter === 'transfer' ? colors.white : colors.neutral[600]} />
+        <ArrowUp size={16} color={filter === 'transfer' ? colors.white : neutral[600]} />
         <Text style={[styles.filterText, filter === 'transfer' && styles.activeFilterText]}>Sent</Text>
       </TouchableOpacity>
       <TouchableOpacity 
         style={[styles.filterButton, filter === 'deposit' && styles.activeFilterButton]}
         onPress={() => setFilter('deposit')}
       >
-        <ArrowDown size={16} color={filter === 'deposit' ? colors.white : colors.neutral[600]} />
+        <ArrowDown size={16} color={filter === 'deposit' ? colors.white : neutral[600]} />
         <Text style={[styles.filterText, filter === 'deposit' && styles.activeFilterText]}>Received</Text>
       </TouchableOpacity>
       <TouchableOpacity 
         style={[styles.filterButton, filter === 'payment' && styles.activeFilterButton]}
         onPress={() => setFilter('payment')}
       >
-        <Filter size={16} color={filter === 'payment' ? colors.white : colors.neutral[600]} />
+        <Filter size={16} color={filter === 'payment' ? colors.white : neutral[600]} />
         <Text style={[styles.filterText, filter === 'payment' && styles.activeFilterText]}>Bills</Text>
       </TouchableOpacity>
     </View>
@@ -64,7 +64,7 @@ export default function HistoryScreen() {
   // Render date header
   const renderDateHeader = () => (
     <TouchableOpacity style={styles.dateHeaderContainer}>
-      <Calendar size={20} color={colors.neutral[600]} />
+      <Calendar size={20} color={neutral[600]} />
       <Text style={styles.dateHeaderText}>February 2025</Text>
     </TouchableOpacity>
   );
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral[200],
+    borderBottomColor: neutral[200],
   },
   filterButton: {
     flexDirection: 'row',
@@ -115,14 +115,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     marginRight: 8,
     borderRadius: 16,
-    backgroundColor: colors.neutral[100],
+    backgroundColor: neutral[100],
   },
   activeFilterButton: {
-    backgroundColor: colors.primary[500],
+    backgroundColor: primary[500],
   },
   filterText: {
     fontSize: 14,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Medium',
     marginLeft: 4,
   },
@@ -135,11 +135,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: colors.neutral[200],
+    borderBottomColor: neutral[200],
   },
   dateHeaderText: {
     fontSize: 16,
-    color: colors.neutral[800],
+    color: neutral[800],
     fontFamily: 'Roboto-Medium',
     marginLeft: 8,
   },
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 16,
-    color: colors.neutral[600],
+    color: neutral[600],
     fontFamily: 'Roboto-Regular',
   },
 });
